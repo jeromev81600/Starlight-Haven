@@ -86,10 +86,53 @@ const destroy = (req, res) => {
     });
 };
 
+const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
+  const { email } = req.body;
+
+  models.user
+    .findByEmail(email)
+    .then(([users]) => {
+      if (users[0] != null) {
+        [req.user] = users;
+        next();
+      } else {
+        res.status(401).send("Unauthorized");
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};
+
+// middleware to verify if user is admin
+
+const verifyAdminCredentials = (req, res, next) => {
+  const { sub } = req.payload;
+
+  models.user
+    .getCredentials(sub)
+    .then(([users]) => {
+      const adminCredentials = users[0].admin_credentials;
+
+      if (adminCredentials) {
+        next();
+      } else {
+        res.status(403).send("Access denied");
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};
+
 module.exports = {
   browse,
   read,
   edit,
   add,
+  getUserByEmailWithPasswordAndPassToNext,
+  verifyAdminCredentials,
   destroy,
 };

@@ -8,6 +8,29 @@ const BivouacControllers = require("./controllers/BivouacControllers");
 const EquipmentControllers = require("./controllers/EquipmentControllers");
 const BackpackControllers = require("./controllers/BackpackControllers");
 const BackpackHasBivouacControllers = require("./controllers/BackpackHasBivouacControllers");
+const { hashPassword, verifyToken, verifyPassword } = require("../auth");
+const { validateUser } = require("../validators");
+
+const { verifyAdminCredentials } = UserControllers;
+
+// ----------------------------------------- Public routes -------------------------------------------
+
+router.post("/users", hashPassword, validateUser, UserControllers.add);
+router.post(
+  "/users/login",
+  UserControllers.getUserByEmailWithPasswordAndPassToNext,
+  verifyPassword
+);
+// ---------------------------------------- Private Routes ----------------------------------------------
+
+router.use(verifyToken);
+
+router.get("/users/:id", UserControllers.read);
+router.put("/users/:id", validateUser, UserControllers.edit);
+
+// ----------------------------------------- Admin routes ------------------------------------------------
+
+router.use(verifyAdminCredentials);
 
 router.get("/userhasbivouacs", UserHasBivouacControllers.browse);
 router.get("/userhasbivouacs/:id", UserHasBivouacControllers.read);
@@ -16,8 +39,6 @@ router.post("/userhasbivouacs", UserHasBivouacControllers.add);
 router.delete("/userhasbivouacs/:id", UserHasBivouacControllers.destroy);
 
 router.get("/users", UserControllers.browse);
-router.get("/users/:id", UserControllers.read);
-router.put("/users/:id", UserControllers.edit);
 router.post("/users", UserControllers.add);
 router.delete("/users/:id", UserControllers.destroy);
 
