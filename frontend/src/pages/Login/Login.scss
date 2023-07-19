@@ -1,1 +1,112 @@
-// @media screen and (min-width: 768px) {}
+.login,
+.loginContentDiv,
+.logoDiv,
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  min-height: 100dvh;
+  height: 100%;
+  width: 100%;
+
+  .loginContentDiv {
+    gap: 2rem;
+    width: 80%;
+    max-width: 480px;
+
+    .loginForm {
+      width: 100%;
+      gap: 2.5em;
+      position: relative;
+      p {
+        margin-bottom: 1rem;
+      }
+      .error {
+        position: absolute;
+        bottom: -2rem;
+        color: rgb(231, 52, 97);
+        font-size: 12px;
+        font-style: italic;
+        margin-bottom: 0;
+      }
+    }
+    .split {
+      display: flex;
+      width: 100%;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      .splitLine {
+        width: calc(100% / 2 - 1rem);
+      }
+    }
+    .noAccount {
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+
+      .registerLink {
+        border: none;
+        background: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.passwordInput {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  .hidePasswordButton {
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    padding: 0;
+    width: auto;
+    cursor: pointer;
+    img {
+      width: 1.5rem;
+    }
+  }
+}
+
+.loginForm div,
+.loginForm input,
+.loginForm button {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .login {
+    .loginContentDiv {
+      width: 40%;
+      min-width: 560px;
+      max-width: none;
+      margin: 0 auto;
+      gap: 2.5em;
+      padding-inline: 7rem;
+      padding-bottom: 3rem;
+      padding-top: 2rem;
+      border-radius: 5px;
+    }
+  }
+
+  .loginButton {
+    margin-top: 1em;
+  }
+}
+
+.loginButton {
+  border: 1px solid lightgrey;
+}
