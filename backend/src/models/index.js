@@ -29,10 +29,26 @@ pool.getConnection().catch(() => {
 
 const models = {};
 
-const ItemManager = require("./ItemManager");
+const UserHasBivouacManager = require("./UserHasBivouacManager");
+const UserManager = require("./UserManager");
+const BivouacManager = require("./BivouacManager");
+const EquipmentManager = require("./EquipmentManager");
+const BackpackManager = require("./BackpackManager");
 
-models.item = new ItemManager();
-models.item.setDatabase(pool);
+models.userHasBivouac = new UserHasBivouacManager();
+models.userHasBivouac.setDatabase(pool);
+
+models.user = new UserManager();
+models.user.setDatabase(pool);
+
+models.bivouac = new BivouacManager();
+models.bivouac.setDatabase(pool);
+
+models.equipment = new EquipmentManager();
+models.equipment.setDatabase(pool);
+
+models.backpack = new BackpackManager();
+models.backpack.setDatabase(pool);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
