@@ -34,6 +34,7 @@ const UserManager = require("./UserManager");
 const BivouacManager = require("./BivouacManager");
 const EquipmentManager = require("./EquipmentManager");
 const BackpackManager = require("./BackpackManager");
+const BackpackHasBivouacManager = require("./BackpackHasBivouacManager");
 
 models.userHasBivouac = new UserHasBivouacManager();
 models.userHasBivouac.setDatabase(pool);
@@ -49,6 +50,9 @@ models.equipment.setDatabase(pool);
 
 models.backpack = new BackpackManager();
 models.backpack.setDatabase(pool);
+
+models.backpackHasBivouac = new BackpackHasBivouacManager();
+models.backpackHasBivouac.setDatabase(pool);
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model

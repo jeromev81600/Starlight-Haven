@@ -6,13 +6,19 @@ class BivouacManager extends AbstractManager {
   }
 
   insert(bivouac) {
-    const { type, location, weatherConditions, description, date } = bivouac;
+    const {
+      type,
+      location,
+      OptimalWeatherConditions,
+      description,
+      optimalPeriods,
+    } = bivouac;
     return this.database.query(
       `insert into ${this.table} (type, location,
-      weatherConditions,
+        OptimalWeatherConditions,
       description,
-      date) values (?,?,?,?,?)`,
-      [type, location, weatherConditions, description, date]
+      optimalPeriods) values (?,?,?,?,?)`,
+      [type, location, OptimalWeatherConditions, description, optimalPeriods]
     );
   }
 

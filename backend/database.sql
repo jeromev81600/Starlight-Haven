@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `starbdd`.`user` (
   `hashedpassword` VARCHAR(255) NOT NULL,
   `admin_credentials` TINYINT NOT NULL DEFAULT 0,
   `backpack_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `backpack_id`),
+  PRIMARY KEY (`id`),
   CONSTRAINT `fk_user_backpack1`
     FOREIGN KEY (`backpack_id`)
     REFERENCES `starbdd`.`backpack` (`id`)
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `starbdd`.`equipment` (
   `user_id` INT NOT NULL,
   `type` VARCHAR(100) NULL,
   `description` LONGTEXT NULL,
-  PRIMARY KEY (`id`, `user_id`),
+  PRIMARY KEY (`id`),
   CONSTRAINT `fk_equipment_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `starbdd`.`user` (`id`)
@@ -125,7 +125,6 @@ VALUES
 CREATE TABLE IF NOT EXISTS `starbdd`.`user_has_bivouac` (
   `user_id` INT NOT NULL AUTO_INCREMENT,
   `bivouac_id` INT NOT NULL,
-  PRIMARY KEY (`user_id`, `bivouac_id`),
   CONSTRAINT `fk_user_has_bivouac_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `starbdd`.`user` (`id`)
@@ -141,5 +140,27 @@ ENGINE = InnoDB;
 INSERT INTO
     `starbdd`.`user_has_bivouac` (user_id,bivouac_id)
 VALUES (1,3);
+
+-- -----------------------------------------------------
+-- Table `starbdd`.`backpack_has_bivouac`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `starbdd`.`backpack_has_bivouac` (
+  `backpack_id` INT NOT NULL,
+  `bivouac_id` INT NOT NULL,
+  CONSTRAINT `fk_backpack_has_bivouac_backpack1`
+    FOREIGN KEY (`backpack_id`)
+    REFERENCES `starbdd`.`backpack` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_backpack_has_bivouac_bivouac1`
+    FOREIGN KEY (`bivouac_id`)
+    REFERENCES `starbdd`.`bivouac` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+INSERT INTO `starbdd`.`backpack_has_bivouac` (backpack_id, bivouac_id)
+VALUES (1, 1), (2, 3), (3, 4), (4, 5), (5, 6), (1, 7), (2, 8), (7, 2), (6, 5);
+  
 
 SET SQL_MODE=Traditional;

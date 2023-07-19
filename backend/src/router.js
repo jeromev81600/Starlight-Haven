@@ -7,6 +7,7 @@ const UserControllers = require("./controllers/UserControllers");
 const BivouacControllers = require("./controllers/BivouacControllers");
 const EquipmentControllers = require("./controllers/EquipmentControllers");
 const BackpackControllers = require("./controllers/BackpackControllers");
+const BackpackHasBivouacControllers = require("./controllers/BackpackHasBivouacControllers");
 
 router.get("/userhasbivouacs", UserHasBivouacControllers.browse);
 router.get("/userhasbivouacs/:id", UserHasBivouacControllers.read);
@@ -37,5 +38,14 @@ router.get("/backpacks/:id", BackpackControllers.read);
 router.put("/backpacks/:id", BackpackControllers.edit);
 router.post("/backpacks", BackpackControllers.add);
 router.delete("/backpacks/:id", BackpackControllers.destroy);
+
+router.get("/backpackhasbivouacs", BackpackHasBivouacControllers.browse);
+router.get("/backpackhasbivouacs/:id", BackpackHasBivouacControllers.read);
+router.put("/backpackhasbivouacs/:id", BackpackHasBivouacControllers.edit);
+router.post("/backpackhasbivouacs", BackpackHasBivouacControllers.add);
+router.delete(
+  "/backpackhasbivouacs/:id",
+  BackpackHasBivouacControllers.destroy
+);
 
 module.exports = router;
