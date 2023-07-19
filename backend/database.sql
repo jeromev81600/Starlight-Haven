@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS `starbdd`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `firstname` VARCHAR(45) NOT NULL,
   `lastname` VARCHAR(45) NOT NULL,
-  `preferences` LONGTEXT NULL,
   `email` VARCHAR(100) NOT NULL,
   `phone` VARCHAR(15) NULL,
-  `hashedpassword` VARCHAR(255) NOT NULL,
+   `preferences` LONGTEXT NULL,
+  `hashed_password` VARCHAR(255) NOT NULL,
   `admin_credentials` TINYINT NOT NULL DEFAULT 0,
   `backpack_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -54,8 +54,8 @@ CREATE TABLE IF NOT EXISTS `starbdd`.`user` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-INSERT INTO `starbdd`.`user` (firstname, lastname, email, phone, preferences, hashedPassword, admin_credentials, backpack_id)
-VALUES ("Jérôme", "Vilanova", "jerome.vilanova@gmail.com", "+33123456789", "Randonnées de haute-montagne et trekking", "$argon2id$v=19$m=65536,t=3,p=1$2IzUb/JMAlnxRNSHg3g1NQ$zL5OI3I", 1, 1);
+INSERT INTO `starbdd`.`user` (firstname, lastname, email, phone, preferences, hashed_password, admin_credentials, backpack_id)
+VALUES ("Jérôme", "Vilanova", "jerome.vilanova@gmail.com", "+33123456787", "Randonnées de haute-montagne et trekking", "$argon2id$v=19$m=65536,t=3,p=1$Fc2fOTj3AF7U9epqu9AXfw$/os0n2Y", 1, 3);
 
 
 -- -----------------------------------------------------

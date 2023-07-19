@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const AbstractManager = require("./AbstractManager");
 
 class UserManager extends AbstractManager {
@@ -12,18 +13,20 @@ class UserManager extends AbstractManager {
       email,
       phone,
       preferences,
-      hashedPassword,
+      hashed_password,
+      admin_credentials,
       backpackId,
     } = user;
     return this.database.query(
-      `insert into ${this.table} (firstname, lastname, email,phone, preferences,hashedpassword,backpack_id) values (?)`,
+      `insert into ${this.table} (firstname, lastname, email,phone, preferences,hashed_password,admin_credentials,backpack_id) values (?,?,?,?,?,?,?,?)`,
       [
         firstname,
         lastname,
         email,
         phone,
         preferences,
-        hashedPassword,
+        hashed_password,
+        admin_credentials,
         backpackId,
       ]
     );
@@ -36,18 +39,20 @@ class UserManager extends AbstractManager {
       email,
       phone,
       preferences,
-      hashedPassword,
+      hashed_Password,
+      admin_credentials,
       backpackId,
     } = user;
     return this.database.query(
-      `update ${this.table} set title = ? where id = ?`,
+      `update ${this.table} set title = ?, firstname = ?, lastname =? , email = ?, phone = ?, preferences = ?,hashed_password = ?,admin_credentials = ?, backpack_id = ? where id = ?`,
       [
         firstname,
         lastname,
         email,
         phone,
         preferences,
-        hashedPassword,
+        hashed_Password,
+        admin_credentials,
         backpackId,
         id,
       ]
