@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import EquipmentCard from "../../components/EquipmentCard/EquipmentCard";
 import Navbar from "../../components/Navbar/Navbar";
@@ -13,6 +12,7 @@ export default function Equipment() {
   const userToken = useContext(AuthContext);
   const { selectedBackpackId } = TripValue;
   const [backpackData, setBackpackData] = useState([]);
+  const [equipments, setEquipments] = useState([]);
   const getSelectedBackpack = () => {
     axios
       .get(
@@ -33,15 +33,31 @@ export default function Equipment() {
       });
   };
 
+  const getEquipments = () => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/equipments`, {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
+      })
+      .then((res) => {
+        setEquipments(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   useEffect(() => {
     getSelectedBackpack();
+    getEquipments();
   }, []);
 
   return (
-    <div className="BivouacContainer">
+    <div className="EquipmentContainer">
       <Navbar />
-      <section className="BivouacSection">
-        <div className="BivouacTextContainer">
+      <section className="EquipmentSection">
+        <div className="EquipmentTextContainer">
           <h1>Choix de vos équipements</h1>
           <p>
             Voici une liste complète d'articles à emporter dans votre sac à
@@ -50,15 +66,8 @@ export default function Equipment() {
             bivouac.
           </p>
         </div>
-        <EquipmentCard backpackData={backpackData} />
+        <EquipmentCard backpackData={backpackData} equipments={equipments} />
       </section>
-      <div className="ButtonContainer">
-        <Link to="/home">
-          <button className="HomeButton" type="button">
-            <i className="pi pi-home" style={{ fontSize: "2rem" }} />
-          </button>
-        </Link>
-      </div>
       <Footer />
     </div>
   );

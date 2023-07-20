@@ -39,7 +39,10 @@ export default function Backpack() {
       <section className="BivouacSection">
         <div className="BivouacTextContainer">
           <h1>Choix du Sac à dos</h1>
-          <p>Vous avez choisi ce type de bivouac :{backpacks[0].BivouacType}</p>
+          <p>
+            Félicitations, vous avez choisi votre type de bivouac; vous allez
+            maitenant pouvoir sélectionner un sac adapté à votre séjour.
+          </p>
           <p className="animate-charcter">
             Cliquez sur le type de sac à dos que vous souhaitez utiliser
           </p>

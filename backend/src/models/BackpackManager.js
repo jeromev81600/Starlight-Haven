@@ -7,7 +7,7 @@ class BackpackManager extends AbstractManager {
 
   findBackPacksByBivouac(id) {
     return this.database.query(
-      ` SELECT bck.type AS BackpackType, bck.volumemin, bck.volumemax, bck.weight, bck.payload, bck.description, bck.url, bc.type AS BivouacType
+      ` SELECT bck.id,bck.type AS BackpackType, bck.volumemin, bck.volumemax, bck.weight, bck.payload, bck.description, bck.url, bc.type AS BivouacType
       FROM ${this.table} bck 
       JOIN backpack_has_bivouac bhb ON bck.id = bhb.backpack_id
       JOIN bivouac bc ON bc.id = bhb.bivouac_id

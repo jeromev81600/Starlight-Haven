@@ -22,10 +22,10 @@ export default function Navbar() {
               <Link to="/home">Accueil</Link>
             </li>
             <li className="navbar-link">
-              <Link to="/bivouacs">Bivouacs</Link>
+              <Link to="/bivouac">Bivouacs</Link>
             </li>
             <li className="navbar-link">
-              <Link to="/A propos">A propos</Link>
+              <Link to="/about">A propos</Link>
             </li>
             <li className="navbar-link">
               <Link to="/contact">Contact</Link>
