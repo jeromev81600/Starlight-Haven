@@ -32,7 +32,7 @@ class BivouacManager extends AbstractManager {
     } = bivouac;
     return this.database.query(
       `update ${this.table} set type = ?,location = ?,
-      Optimal_weather_conditions = ?,
+      OptimalWeatherConditions = ?,
       description = ?,
       optimal_periods = ? where id = ?`,
       [
