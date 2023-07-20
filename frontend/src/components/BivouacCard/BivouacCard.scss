@@ -1,0 +1,103 @@
+.BivouacCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 5rem;
+
+  .BivouacCard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    &:hover {
+      border: 4px solid white;
+    }
+
+    .BivouacCardTitleBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      border-bottom: 1px solid lightgrey;
+    }
+
+    h2 {
+      font-family: var(--fontFamilyTitle);
+      font-size: var(--fontSizeH3);
+      margin-bottom: 1%;
+      color: var(--whiteGoldColor);
+      margin: 1rem;
+    }
+
+    h3 {
+      font-family: var(--fontFamilyTitle);
+      font-size: var(--fontSizeH4);
+      margin-bottom: 1%;
+      color: var(--whiteGoldColor);
+    }
+
+    .BivouacCardContentBox {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 1rem;
+    }
+    p {
+      text-align: left;
+      color: var(--whiteGoldColor);
+      margin-bottom: 1rem;
+      font-size: var(--fontSizeText);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .BivouacCardContainer {
+    padding: 0 2rem 0 2rem;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    .BivouacCardContentBox {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 1rem;
+    }
+    .BivouacCard {
+      width: 39rem;
+      min-height: 300px;
+      padding: 0;
+      &:hover {
+        border: 4px solid white;
+      }
+
+      h2 {
+        font-family: var(--fontFamilyTitle);
+        font-size: var(--fontSizeH2);
+        margin-bottom: 1%;
+        color: var(--whiteGoldColor);
+        margin: 1rem;
+      }
+
+      h3 {
+        font-family: var(--fontFamilyTitle);
+        font-size: var(--fontSizeH3);
+        margin-bottom: 1%;
+        color: var(--whiteGoldColor);
+      }
+      p {
+        text-align: left;
+        color: var(--whiteGoldColor);
+        margin-bottom: 1rem;
+        font-size: var(--fontSizeText);
+        padding: 0.2em 2.8em 0.2em 2em;
+      }
+    }
+  }
+}

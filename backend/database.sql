@@ -65,18 +65,18 @@ CREATE TABLE IF NOT EXISTS `starbdd`.`bivouac` (
   `id` INT NOT NULL AUTO_INCREMENT,
  `type` VARCHAR(200) NOT NULL,
   `location` VARCHAR(200) NOT NULL,
-  `Optimal_weather_conditions` VARCHAR(200) NOT NULL,
+  `OptimalWeatherConditions` VARCHAR(200) NOT NULL,
   `description` VARCHAR(45) NULL,
   `optimal_periods` VARCHAR(200) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-INSERT INTO `starbdd`.`bivouac` (type, location, Optimal_weather_conditions, description, optimal_periods)
+INSERT INTO `starbdd`.`bivouac` (type, location, OptimalWeatherConditions, description, optimal_periods)
 VALUES
-    ('Bivouac classique', 'Montagnes de Chamonix', 'Ensoleillé et clair', 'Bivouac classique dans les Alpes', 'Juillet - Août'),
-    ('Refuge', 'Refuge du Goûter', 'Partiellement nuageux avec ciel dégagé prévu', 'Bivouac en refuge avant l ascension', 'Juin - Septembre'),
+    ('Classique', 'Montagnes de Chamonix', 'Ensoleillé et clair', 'Bivouac classique dans les Alpes', 'Juillet - Août'),
+    ('Refuge', 'Refuge du Goûter', 'Partiellement nuageux avec ciel dégagé prévu', 'Bivouac en refuge avant l\'ascension', 'Juin - Septembre'),
     ('Hamac', 'Forêt de Fontainebleau', 'Ensoleillé avec légère brise', 'Bivouac en hamac dans la forêt', 'Mai - Septembre'),
-    ('Altitude', 'Montagnes des Pyrénées', 'Ciel dégagé avec températures douces', 'Bivouac d altitude', 'Juillet - Septembre'),
+    ('Altitude', 'Montagnes des Pyrénées', 'Ciel dégagé avec températures douces', 'Bivouac d\'altitude', 'Juillet - Septembre'),
     ('Tarp', 'Sentier du PCT', 'Ensoleillé avec températures modérées', 'Bivouac en tarp sur le Pacific Crest Trail', 'Juin - Octobre'),
     ('Igloo', 'Sommet du Mont Blanc', 'Ciel dégagé avec températures froides', 'Bivouac en igloo', 'Septembre - Novembre'),
     ('Belle étoile', 'Plage de Biarritz', 'Ensoleillé avec brise marine rafraîchissante', 'Bivouac en sac de couchage à la belle étoile', 'Juin - Août'),

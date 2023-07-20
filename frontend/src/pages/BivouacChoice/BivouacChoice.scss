@@ -1,9 +1,50 @@
-.Bivouaccontainer {
+.BivouacContainer {
   background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .BivouacSection {
+    margin: 2rem 4rem 2rem 4rem;
+  }
+  .BivouacTextContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 4rem 0;
+    gap: 2rem;
+    width: 380px;
+    p {
+      line-height: 1.5em;
+      font-size: var(--fontSizeText);
+    }
+  }
+  h1 {
+    font-family: var(--fontFamilyText);
+    font-size: var(--fontSizeH2);
+    color: var(--whiteGoldColor);
+  }
 }
 
-// @media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+  .BivouacSection {
+    margin: 4rem;
+    .BivouacTextContainer {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0 4rem 0;
+      gap: 2rem;
+      width: 100%;
+      p {
+        line-height: 1.5em;
+        font-size: var(--fontSizeText);
+      }
+    }
+
+    h1 {
+      font-family: var(--fontFamilyText);
+      font-size: var(--fontSizeH1);
+      color: var(--whiteGoldColor);
+    }
+  }
+}

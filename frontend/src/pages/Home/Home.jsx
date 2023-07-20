@@ -26,7 +26,7 @@ export default function Home() {
           </p>
         </section>
         <div className="ButtonContainer">
-          <Link to="bivouac">
+          <Link to="/bivouac">
             <button className="HomeButton" type="button">
               En avant pour l'aventure !
             </button>
