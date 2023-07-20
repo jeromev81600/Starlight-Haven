@@ -32,6 +32,22 @@ const read = (req, res) => {
     });
 };
 
+const getBackPacksByBivouacId = (req, res) => {
+  models.backpack
+    .findBackPacksByBivouac(req.params.id)
+    .then(([rows]) => {
+      if (rows == null) {
+        res.status(404).send("Not found");
+      } else {
+        res.status(200).send(rows);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};
+
 const edit = (req, res) => {
   const backpack = req.body;
 
@@ -89,6 +105,7 @@ const destroy = (req, res) => {
 module.exports = {
   browse,
   read,
+  getBackPacksByBivouacId,
   edit,
   add,
   destroy,

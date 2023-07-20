@@ -6,13 +6,22 @@ const TripContext = createContext();
 export function TripProvider({ children }) {
   // States
   const [bivouacs, setBivouacs] = useState([]);
+  const [backpacks, setBackpacks] = useState([]);
+  const [selectedBivouacId, setSelectedBivouacId] = useState(null);
+  const [selectedBackpackId, setSelectedBackpackId] = useState(null);
 
   const tripValue = useMemo(() => {
     return {
       bivouacs,
       setBivouacs,
+      selectedBivouacId,
+      setSelectedBivouacId,
+      backpacks,
+      setBackpacks,
+      selectedBackpackId,
+      setSelectedBackpackId,
     };
-  }, [bivouacs]);
+  }, [bivouacs, selectedBivouacId, backpacks, selectedBackpackId]);
 
   return (
     <TripContext.Provider value={tripValue}>{children}</TripContext.Provider>

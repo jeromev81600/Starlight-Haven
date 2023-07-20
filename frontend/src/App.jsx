@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import Backpack from "./pages/Backpack/Backpack";
 import About from "./pages/About/About";
 import BivouacChoice from "./pages/BivouacChoice/BivouacChoice";
+import Equipment from "./pages/Equipment/Equipment";
 import { AuthProvider } from "./contexts/AuthContext";
 import { TripProvider } from "./contexts/TripContext";
 import "./App.scss";
@@ -23,6 +24,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/bivouac" element={<BivouacChoice />} />
               <Route path="/backpack" element={<Backpack />} />
+              <Route path="/equipment" element={<Equipment />} />
             </Routes>
           </div>
         </Router>

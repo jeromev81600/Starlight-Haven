@@ -1,12 +1,31 @@
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
+import TripContext from "../../contexts/TripContext";
 import "./BivouacCard.scss";
 
 export default function BivouacCard({ bivouacs }) {
+  const TripValue = useContext(TripContext);
+  const { selectedBivouacId, setSelectedBivouacId } = TripValue;
+  const navigate = useNavigate();
+
+  const handleCardClick = (id) => {
+    setSelectedBivouacId(id);
+    if (selectedBivouacId) {
+      navigate("/backpack");
+    }
+  };
+
   return (
     bivouacs && (
       <div className="BivouacCardContainer">
         {bivouacs.map((bivouac) => (
-          <div className="BivouacCard" key={bivouac.id}>
+          <button
+            type="button"
+            className="BivouacCard"
+            key={bivouac.id}
+            onClick={() => handleCardClick(bivouac.id)}
+          >
             <div className="BivouacCardTitleBox">
               <h2>{bivouac.type}</h2>
             </div>
@@ -25,7 +44,7 @@ export default function BivouacCard({ bivouacs }) {
                 <h3>Périodes optimales:</h3> {bivouac.optimal_periods}
               </p>
             </div>
-          </div>
+          </button>
         ))}
       </div>
     )

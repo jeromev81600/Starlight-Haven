@@ -35,7 +35,8 @@ router.get("/equipments/:id", EquipmentControllers.read);
 router.post("/equipments", EquipmentControllers.add);
 
 router.get("/backpacks", BackpackControllers.browse);
-router.get("/backpacks/:id", BackpackControllers.read);
+router.get("/backpackbyid/:id", BackpackControllers.read);
+router.get("/backpacks/:id", BackpackControllers.getBackPacksByBivouacId);
 router.post("/backpacks", BackpackControllers.add);
 
 router.get("/backpackhasbivouacs", BackpackHasBivouacControllers.browse);

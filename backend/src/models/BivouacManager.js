@@ -11,14 +11,22 @@ class BivouacManager extends AbstractManager {
       location,
       OptimalWeatherConditions,
       description,
+      url,
       optimalPeriods,
     } = bivouac;
     return this.database.query(
       `insert into ${this.table} (type, location,
         OptimalWeatherConditions,
-      description,
-      optimalPeriods) values (?,?,?,?,?)`,
-      [type, location, OptimalWeatherConditions, description, optimalPeriods]
+      description,url,
+      optimalPeriods) values (?,?,?,?,?,?)`,
+      [
+        type,
+        location,
+        OptimalWeatherConditions,
+        description,
+        url,
+        optimalPeriods,
+      ]
     );
   }
 
@@ -28,18 +36,20 @@ class BivouacManager extends AbstractManager {
       location,
       OptimalWeatherConditions,
       description,
+      url,
       optimalPeriods,
     } = bivouac;
     return this.database.query(
       `update ${this.table} set type = ?,location = ?,
       OptimalWeatherConditions = ?,
-      description = ?,
+      description = ?,url = ?,
       optimal_periods = ? where id = ?`,
       [
         type,
         location,
         OptimalWeatherConditions,
         description,
+        url,
         optimalPeriods,
         id,
       ]

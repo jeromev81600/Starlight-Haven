@@ -1,0 +1,91 @@
+.BivouacContainer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .BivouacSection {
+    margin: 2rem 4rem 2rem 4rem;
+  }
+  .BivouacTextContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 4rem 0;
+    gap: 2rem;
+    width: 380px;
+    p {
+      line-height: 1.5em;
+      font-size: var(--fontSizeText);
+    }
+  }
+  h1 {
+    font-family: var(--fontFamilyText);
+    font-size: var(--fontSizeH2);
+    color: var(--whiteGoldColor);
+  }
+}
+
+.animate-charcter {
+  background-image: linear-gradient(
+    -225deg,
+    hsl(146, 77%, 27%) 0%,
+    hsl(146, 77%, 27%) 10%,
+    hsl(146, 77%, 27%) 15%,
+    hsl(146, 77%, 27%) 20%,
+    hsl(146, 77%, 27%) 25%,
+    #19b360 30%,
+    #19b360 35%,
+    #19b360 40%,
+    #19b360 45%,
+    #19b360 50%,
+    #13ff81 55%,
+    #13ff81 60%,
+    #13ff81 65%,
+    #13ff81 70%,
+    #19b360 75%,
+    #19b360 80%,
+    #19b360 85%,
+    #19b360 90%,
+    #19b360 95%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 30px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .BivouacSection {
+    margin: 4rem;
+    .BivouacTextContainer {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0 4rem 0;
+      gap: 2rem;
+      width: 100%;
+      p {
+        line-height: 1.5em;
+        font-size: var(--fontSizeText);
+      }
+    }
+
+    h1 {
+      font-family: var(--fontFamilyText);
+      font-size: var(--fontSizeH1);
+      color: var(--whiteGoldColor);
+    }
+  }
+}
