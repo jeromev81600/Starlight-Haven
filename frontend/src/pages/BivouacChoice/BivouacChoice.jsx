@@ -1,5 +1,4 @@
 import { useContext, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import BivouacCard from "../../components/BivouacCard/BivouacCard";
 import Footer from "../../components/Footer/Footer";
@@ -45,7 +44,9 @@ export default function BivouacChoice() {
             avons des conseils et des recommandations adaptés à chaque
             situation.
           </p>
-          <p>Cliquez sur le type de bivouac que vous allez effectuer</p>
+          <p className="animate-charcter">
+            Cliquez sur le type de bivouac que vous souhaitez effectuer
+          </p>
         </div>
         <BivouacCard bivouacs={bivouacs} />
       </section>

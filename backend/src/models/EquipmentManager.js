@@ -6,20 +6,20 @@ class EquipmentManager extends AbstractManager {
   }
 
   insert(equipment) {
-    const { equipmentname, weight, volume, userId, type, description } =
+    const { equipmentname, weight, volume, userId, type, url, description } =
       equipment;
     return this.database.query(
-      `insert into ${this.table} (equipmentname,weight,volume,user_id,type,description) values (?,?,?,?,?,?)`,
-      [equipmentname, weight, volume, userId, type, description]
+      `insert into ${this.table} (equipmentname,weight,volume,user_id,type,url,description) values (?,?,?,?,?,?,?)`,
+      [equipmentname, weight, volume, userId, type, url, description]
     );
   }
 
   update(equipment, id) {
-    const { equipmentname, weight, volume, userId, type, description } =
+    const { equipmentname, weight, volume, userId, type, url, description } =
       equipment;
     return this.database.query(
-      `update ${this.table} set equipmentname = ?, weight = ?,volume = ?, userId = ?, type = ?, description = ? where id = ?`,
-      [equipmentname, weight, volume, userId, type, description, id]
+      `update ${this.table} set equipmentname = ?, weight = ?,volume = ?, userId = ?, type = ?,url = ?, description = ? where id = ?`,
+      [equipmentname, weight, volume, userId, type, url, description, id]
     );
   }
 }

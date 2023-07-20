@@ -1,4 +1,4 @@
-.BivouacCardContainer {
+.EquipmentCardContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +6,8 @@
   gap: 3rem;
   margin-bottom: 5rem;
 
-  .BivouacCard {
+  .EquipmentCard,
+  .EquipmentBackpackCard {
     width: 100%;
     background-color: black;
     display: flex;
@@ -14,11 +15,9 @@
     align-items: center;
     border: 1px solid lightgrey;
     border-radius: 10px;
-    &:hover {
-      border: 4px solid white;
-    }
 
-    .BivouacCardTitleBox {
+    .EquipmentCardTitleBox,
+    .EquipmentBackpackCardTitleBox {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -41,7 +40,8 @@
       color: var(--whiteGoldColor);
     }
 
-    .BivouacCardContentBox {
+    .EquipmentCardContentBox,
+    .EquipmentBackpackCardContentBox {
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -57,26 +57,25 @@
 }
 
 @media screen and (min-width: 768px) {
-  .BivouacCardContainer {
+  .EquipmentCardContainer {
     padding: 0 2rem 0 2rem;
     display: flex;
     align-items: start;
     flex-wrap: wrap;
     gap: 3rem;
 
-    .BivouacCardContentBox {
+    .EquipmentCardContentBox,
+    .EquipmentBackpackCardContentBox {
       display: flex;
       flex-direction: column;
       width: 100%;
       padding: 1rem;
     }
-    .BivouacCard {
+    .EquipmentCard,
+    .EquipmentBackpackCard {
       width: 39rem;
       min-height: 300px;
       padding: 0;
-      &:hover {
-        border: 4px solid white;
-      }
 
       h2 {
         font-family: var(--fontFamilyTitle);
