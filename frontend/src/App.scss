@@ -3,8 +3,7 @@
 
 body {
   min-height: 100dvh;
-  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: Poppins, sans-serif;
 }
 
 .App {
@@ -17,11 +16,13 @@ body {
 }
 
 :root {
+  height: 100%;
   --darkGoldColor: #12110b;
   --whiteGoldColor: #fffbef;
   --whitecolorbis: #ffffd4c3;
   --Marron: #9b4a38ac;
   --Vert: #148f54;
+  --border: lightgrey;
 
   --blackBgGradient: linear-gradient(141.47deg, #222222 3.84%, #12110b 93.65%);
   --blackBgGradientSmooth: linear-gradient(
@@ -37,10 +38,10 @@ body {
   --bgBlur: blur(8px);
 
   --fontFamilyText: "Poppins", sans-serif;
-  --fontFamilyTitle: "'Holtwood One SC', serif;";
+  --fontFamilyTitle: "Holtwood One SC", serif;
 
-  --fontSizeH1: clamp(3rem, 7vw + 1rem, 5rem);
-  --fontSizeH2: clamp(1.8rem, 4vw + 1rem, 3rem);
+  --fontSizeH1: clamp(1rem, 7vw + 1rem, 2.6rem);
+  --fontSizeH2: clamp(1rem, 4vw + 1rem, 1.7rem);
   --fontSizeText: clamp(16px, 2vw + 0.5rem, 1.5rem);
 
   --marginPageContent: clamp(1rem, 10vw + 2rem, 12rem);

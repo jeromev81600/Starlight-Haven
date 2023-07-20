@@ -1,1 +1,64 @@
-// @media screen and (min-width: 768px) {}
+.HomeContent,
+.Homecontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.Homecontainer {
+  background-color: black;
+  .HomeContent {
+    padding: 4rem 3rem 4rem 3rem;
+    justify-content: space-between;
+    gap: 5rem;
+    .HomeTextSection {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      p {
+        line-height: 1.5em;
+        font-size: var(--fontSizeText);
+      }
+    }
+  }
+
+  h1 {
+    font-family: var(--fontFamilyText);
+    font-size: var(--fontSizeH1);
+    margin-bottom: 5%;
+    color: var(--whiteGoldColor);
+  }
+
+  h2 {
+    font-family: var(--fontFamilyTitle);
+    font-size: var(--fontSizeH2);
+    margin-bottom: 5%;
+    color: var(--whiteGoldColor);
+  }
+  .ButtonContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .HomeButton {
+    border: 1px solid lightgrey;
+    background-color: black;
+    border-radius: 15px;
+    max-width: 250px;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .HomeContent {
+    padding: 4rem 4rem 4rem 4rem;
+    width: 80%;
+    margin-bottom: 120px;
+    p {
+      line-height: 1.5em;
+    }
+  }
+}

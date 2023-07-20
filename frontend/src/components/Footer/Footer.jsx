@@ -1,10 +1,21 @@
-// import { Link } from "react-router-dom";
 import "./Footer.scss";
 
-export default function Footer() {
+function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
-    <div>
-      <p>component</p>
-    </div>
+    <footer>
+      <div>
+        <p>&copy;WCS Projet 2 - 06 Mai 2023</p>
+      </div>
+      <div className="up">
+        <button type="button" className="scroll-to-top" onClick={scrollToTop}>
+          <i className="pi pi-chevron-up" style={{ fontSize: "2rem" }} />
+        </button>
+      </div>
+    </footer>
   );
 }
+
+export default Footer;
