@@ -8,23 +8,43 @@
   justify-content: center;
 }
 
+.Logoandtitle {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    font-family: var(--fontFamilyTitle);
+    font-size: var(--fontSizeH1);
+    color: var(--whitecolorbis);
+  }
+}
+
 .login {
+  background-color: black;
   min-height: 100dvh;
   height: 100%;
   width: 100%;
 
   .loginContentDiv {
+    border: 1px solid lightgrey;
     gap: 2rem;
     width: 80%;
     max-width: 480px;
-
+    h2 {
+      font-size: var(--fontSizeH2);
+      margin-bottom: 5%;
+      color: var(--whiteGoldColor);
+    }
     .loginForm {
       width: 100%;
       gap: 2.5em;
       position: relative;
       p {
+        text-align: left;
+        color: var(--whiteGoldColor);
         margin-bottom: 1rem;
+        font-size: var(--fontSizeText);
       }
+
       .error {
         position: absolute;
         bottom: -2rem;
@@ -81,6 +101,15 @@
   }
 }
 
+.loginButton {
+  border: 1px solid lightgrey;
+  background-color: black;
+  border-radius: 15px;
+  max-width: 250px;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
 .loginForm div,
 .loginForm input,
 .loginForm button {
@@ -105,8 +134,4 @@
   .loginButton {
     margin-top: 1em;
   }
-}
-
-.loginButton {
-  border: 1px solid lightgrey;
 }

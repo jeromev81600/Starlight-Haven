@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import AuthContext from "../../contexts/AuthContext";
 import Input from "../../components/Input";
+import AuthContext from "../../contexts/AuthContext";
+import StarlightTitle from "../../assets/img/StarlightTitle.png";
 import eye from "../../assets/Icons/Eye_Icon.svg";
 import "./Login.scss";
 
@@ -70,7 +71,11 @@ export default function Login() {
   // ------------------------------------------------return the component----------------------------------------------------
   return (
     <div className="login">
+      <div className="Logoandtitle">
+        <img src={StarlightTitle} alt="title" />
+      </div>
       <div className="loginContentDiv">
+        <h2>Connexion</h2>
         <form action="" className="loginForm" onSubmit={handleSubmit}>
           <div>
             <p>Email</p>
@@ -114,16 +119,6 @@ export default function Login() {
           </button>
           {errorMsg && <p className="error">Email ou mot de passe incorrect</p>}
         </form>
-        <div className="noAccount">
-          <p>Pas encore en possession d'un compte ?</p>
-          <button
-            type="button"
-            className="registerLink"
-            onClick={() => navigate("/registration")}
-          >
-            S'inscrire
-          </button>
-        </div>
       </div>
     </div>
   );

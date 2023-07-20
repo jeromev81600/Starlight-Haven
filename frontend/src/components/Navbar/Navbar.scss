@@ -1,1 +1,21 @@
+.NavbarContainer {
+  display: flex;
+  width: 100%;
+  max-height: 150px;
+  align-items: center;
+  padding: 1%;
+  --border: lightgrey;
+  border-bottom: 1px solid var(--border);
+  img:nth-child(1) {
+    max-width: 130px;
+    margin-left: 1%;
+  }
+  img:nth-child(2) {
+    max-width: 240px;
+  }
+  .NavbarLinks {
+    display: flex;
+  }
+}
+
 // @media screen and (min-width: 768px) {}
