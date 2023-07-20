@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "primereact/resources/themes/lara-dark-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import { AuthProvider } from "./contexts/AuthContext";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
