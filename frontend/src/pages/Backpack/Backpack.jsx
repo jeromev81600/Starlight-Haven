@@ -34,10 +34,10 @@ export default function Backpack() {
   }, []);
 
   return (
-    <div className="BivouacContainer">
+    <div className="BackpackContainer">
       <Navbar />
-      <section className="BivouacSection">
-        <div className="BivouacTextContainer">
+      <section className="BackpackSection">
+        <div className="BackpackTextContainer">
           <h1>Choix du Sac à dos</h1>
           <p>
             Félicitations, vous avez choisi votre type de bivouac; vous allez

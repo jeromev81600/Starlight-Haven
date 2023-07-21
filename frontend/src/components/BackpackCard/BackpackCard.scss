@@ -4,7 +4,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 3rem;
-  margin-bottom: 5rem;
+  margin: 0 1rem 5rem 1rem;
 
   .BackpackCard {
     width: 100%;
@@ -16,6 +16,19 @@
     border-radius: 10px;
     &:hover {
       border: 4px solid white;
+    }
+    .ContainerDivision {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      width: 100%;
+      .imgDaypack_bag {
+        width: 40%;
+        height: 40%;
+        margin-left: 10%;
+        border-radius: 10px;
+        border: 1px solid lightgrey;
+      }
     }
 
     .BackpackCardTitleBox {
@@ -63,6 +76,7 @@
     align-items: start;
     flex-wrap: wrap;
     gap: 3rem;
+    margin-bottom: 5rem;
 
     .BackpackCardContentBox {
       display: flex;
@@ -76,6 +90,20 @@
       padding: 0;
       &:hover {
         border: 4px solid white;
+      }
+      .ContainerDivision {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 1%;
+        .imgDaypack_bag {
+          width: 30%;
+          height: 30%;
+          margin-left: 3%;
+          border-radius: 10px;
+          border: 1px solid lightgrey;
+        }
       }
 
       h2 {

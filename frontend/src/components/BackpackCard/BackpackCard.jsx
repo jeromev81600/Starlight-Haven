@@ -33,16 +33,25 @@ export default function BackpackCard({ backpacks }) {
               <p>
                 <h3>Description :</h3> {backpack.description}
               </p>
-              <p>
-                <h3>Volume :</h3> entre {backpack.volumemin} et{" "}
-                {backpack.volumemax} litres
-              </p>
-              <p>
-                <h3>Poids du sac :</h3> {backpack.weight} Kg
-              </p>
-              <p>
-                <h3>Charge utile :</h3> {backpack.payload} Kg
-              </p>
+              <div className="ContainerDivision">
+                <div>
+                  <p>
+                    <h3>Volume :</h3> entre {backpack.volumemin} et{" "}
+                    {backpack.volumemax} litres
+                  </p>
+                  <p>
+                    <h3>Poids du sac :</h3> {backpack.weight} Kg
+                  </p>
+                  <p>
+                    <h3>Charge utile :</h3> {backpack.payload} Kg
+                  </p>
+                </div>
+                <img
+                  className="imgDaypack_bag"
+                  src={backpack.url}
+                  alt="daypack_bag"
+                />
+              </div>
             </div>
           </button>
         ))}

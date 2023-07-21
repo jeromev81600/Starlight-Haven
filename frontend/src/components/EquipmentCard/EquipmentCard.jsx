@@ -6,24 +6,31 @@ export default function EquipmentCard({ backpackData, equipments }) {
     backpackData && (
       <div className="EquipmentCardContainer">
         <div className="EquipmentBackpackCard">
-          <div className="EquipmentBackpackCard">
-            <div className="EquipmentBackpackCardTitleBox">
-              <h2>{backpackData.type}</h2>
-            </div>
-            <div className="EquipmentBackpackCardContentBox">
-              <p>
-                <h3>Description :</h3> {backpackData.description}
-              </p>
-              <p>
-                <h3>Volume :</h3> entre {backpackData.volumemin} et{" "}
-                {backpackData.volumemax} litres
-              </p>
-              <p>
-                <h3>Poids du sac :</h3> {backpackData.weight} Kg
-              </p>
-              <p>
-                <h3>Charge utile :</h3> {backpackData.payload} Kg
-              </p>
+          <div className="EquipmentBackpackCardTitleBox">
+            <h2>{backpackData.type}</h2>
+          </div>
+          <div className="EquipmentBackpackCardContentBox">
+            <p>
+              <h3>Description :</h3> {backpackData.description}
+            </p>
+            <div className="ContainerDivision">
+              <div>
+                <p>
+                  <h3>Volume :</h3> entre {backpackData.volumemin} et{" "}
+                  {backpackData.volumemax} litres
+                </p>
+                <p>
+                  <h3>Poids du sac :</h3> {backpackData.weight} Kg
+                </p>
+                <p>
+                  <h3>Charge utile :</h3> {backpackData.payload} Kg
+                </p>
+              </div>
+              <img
+                className="imgDaypack_bag"
+                src={backpackData.url}
+                alt="daypack_bag"
+              />
             </div>
           </div>
         </div>
