@@ -1,14 +1,14 @@
-.BivouacContainer {
+.BackpackContainer {
   background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  .BivouacSection {
+  .BackpackSection {
     margin: 2rem 4rem 2rem 4rem;
   }
-  .BivouacTextContainer {
+  .BackpackTextContainer {
     display: flex;
     flex-direction: column;
     margin: 2rem 0 4rem 0;
@@ -68,12 +68,13 @@
 }
 
 @media screen and (min-width: 768px) {
-  .BivouacSection {
+  .BackpackSection {
     margin: 4rem;
-    .BivouacTextContainer {
+    .BackpackTextContainer {
       display: flex;
       flex-direction: column;
       margin: 2rem 0 4rem 0;
+      padding: 0 15rem 0 15rem;
       gap: 2rem;
       width: 100%;
       p {
