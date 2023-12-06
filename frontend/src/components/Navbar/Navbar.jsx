@@ -33,7 +33,7 @@ export default function Navbar() {
           </div>
         </ul>
 
-        <button type="button" className="burger-menu" onClick={toggleMenu}>
+        <button role="button" className="burger-menu" onClick={toggleMenu}>
           <span className={`bar ${isMenuOpen ? "open" : ""}`} />
           <span className={`bar ${isMenuOpen ? "open" : ""}`} />
           <span className={`bar ${isMenuOpen ? "open" : ""}`} />
