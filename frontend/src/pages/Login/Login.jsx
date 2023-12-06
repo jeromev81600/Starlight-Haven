@@ -77,43 +77,39 @@ export default function Login() {
       <div className="loginContentDiv">
         <h2>Connexion</h2>
         <form action="" className="loginForm" onSubmit={handleSubmit}>
-          <div id="divLabels">
+          <label htmlFor="email" className="loginEmailLabel">
             <p>Email</p>
-            <label htmlFor="email" className="loginEmailLabel">
-              <Input
-                placeholder="Enter your email"
-                type="email"
-                name="email"
-                id="email"
-                value={form.email}
-                autoComplete="email"
-                onChange={handleEmailChange}
-              />
-            </label>
-          </div>
-          <div id="divLabels">
+            <Input
+              placeholder="Enter your email"
+              type="email"
+              name="email"
+              id="email"
+              value={form.email}
+              autoComplete="email"
+              onChange={handleEmailChange}
+            />
+          </label>
+          <label htmlFor="password" className="loginPasswordLabel">
             <p>Mot de passe</p>
-            <label htmlFor="password" className="loginPasswordLabel">
-              <div className="passwordInput">
-                <Input
-                  placeholder="Enter your password"
-                  type={isHidden ? "password" : "text"}
-                  name="password"
-                  id="password"
-                  value={form.password}
-                  autoComplete="current-password"
-                  onChange={handlePasswordChange}
-                />
-                <button
-                  type="button"
-                  onClick={handlehidePassword}
-                  className="hidePasswordButton"
-                >
-                  <img src={eye} alt="eye icon to show password" />
-                </button>
-              </div>
-            </label>
-          </div>
+            <div className="passwordInput">
+              <Input
+                placeholder="Enter your password"
+                type={isHidden ? "password" : "text"}
+                name="password"
+                id="password"
+                value={form.password}
+                autoComplete="current-password"
+                onChange={handlePasswordChange}
+              />
+              <button
+                type="button"
+                onClick={handlehidePassword}
+                className="hidePasswordButton"
+              >
+                <img src={eye} alt="eye icon to show password" />
+              </button>
+            </div>
+          </label>
           <button disabled={errorMsg} className="loginButton" type="submit">
             Se connecter
           </button>

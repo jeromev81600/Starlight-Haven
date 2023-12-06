@@ -41,15 +41,15 @@
     .loginForm {
       width: 100%;
       gap: 1em;
+      label {
+        margin-bottom: 5%;
+        width: 90%;
+      }
       p {
         text-align: left;
         color: var(--whiteGoldColor);
         margin-bottom: 0.5rem;
         font-size: var(--fontSizeText);
-      }
-
-      #divLabels {
-        margin-bottom: 5%;
       }
 
       .error {
