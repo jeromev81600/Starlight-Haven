@@ -11,6 +11,7 @@
 .Logoandtitle {
   display: flex;
   flex-direction: column;
+  max-width: 300px;
   h1 {
     font-family: var(--fontFamilyTitle);
     font-size: var(--fontSizeH1);
@@ -19,11 +20,9 @@
 }
 
 .login {
+  justify-content: space-evenly;
   background-color: black;
-  justify-content: space-between;
-  min-height: 100dvh;
-  height: auto;
-  width: 100%;
+  min-height: 90dvh;
 
   .loginContentDiv {
     border: 1px solid lightgrey;
@@ -125,6 +124,7 @@
 
 @media screen and (min-width: 768px) {
   .login {
+    min-height: 94dvh;
     .loginContentDiv {
       width: 40%;
       min-width: 560px;

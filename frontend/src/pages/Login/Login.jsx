@@ -71,9 +71,7 @@ export default function Login() {
   // ------------------------------------------------return the component----------------------------------------------------
   return (
     <div className="login">
-      <div className="Logoandtitle">
-        <img src={StarlightTitle} alt="title" />
-      </div>
+      <img src={StarlightTitle} alt="title" className="Logoandtitle" />
       <div className="loginContentDiv">
         <h2>Connexion</h2>
         <form action="" className="loginForm" onSubmit={handleSubmit}>
