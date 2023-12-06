@@ -20,38 +20,44 @@
 
 .login {
   background-color: black;
+  justify-content: space-between;
   min-height: 100dvh;
-  height: 100%;
+  height: auto;
   width: 100%;
 
   .loginContentDiv {
     border: 1px solid lightgrey;
-    gap: 2rem;
+    border-radius: 5px;
+    gap: 1.2rem;
     width: 80%;
     max-width: 480px;
+    margin-bottom: 5%;
+    padding: 5%;
     h2 {
       font-size: var(--fontSizeH2);
-      margin-bottom: 5%;
       color: var(--whiteGoldColor);
+      margin-bottom: 5%;
     }
     .loginForm {
       width: 100%;
-      gap: 2.5em;
-      position: relative;
+      gap: 1em;
       p {
         text-align: left;
         color: var(--whiteGoldColor);
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         font-size: var(--fontSizeText);
       }
 
+      #divLabels {
+        margin-bottom: 5%;
+      }
+
       .error {
-        position: absolute;
         bottom: -2rem;
         color: rgb(231, 52, 97);
         font-size: 12px;
         font-style: italic;
-        margin-bottom: 0;
+        text-align: center;
       }
     }
     .split {
@@ -105,9 +111,10 @@
   border: 1px solid lightgrey;
   background-color: black;
   border-radius: 15px;
-  max-width: 250px;
-  padding: 1rem;
-  font-size: 1.5rem;
+  max-width: 150px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 1em;
 }
 
 .loginForm div,
@@ -123,15 +130,13 @@
       min-width: 560px;
       max-width: none;
       margin: 0 auto;
-      gap: 2.5em;
+      gap: 2em;
       padding-inline: 7rem;
       padding-bottom: 3rem;
       padding-top: 2rem;
-      border-radius: 5px;
+      h2 {
+        margin-bottom: 1%;
+      }
     }
-  }
-
-  .loginButton {
-    margin-top: 1em;
   }
 }

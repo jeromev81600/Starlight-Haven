@@ -77,7 +77,7 @@ export default function Login() {
       <div className="loginContentDiv">
         <h2>Connexion</h2>
         <form action="" className="loginForm" onSubmit={handleSubmit}>
-          <div>
+          <div id="divLabels">
             <p>Email</p>
             <label htmlFor="email" className="loginEmailLabel">
               <Input
@@ -91,7 +91,7 @@ export default function Login() {
               />
             </label>
           </div>
-          <div>
+          <div id="divLabels">
             <p>Mot de passe</p>
             <label htmlFor="password" className="loginPasswordLabel">
               <div className="passwordInput">
