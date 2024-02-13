@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `starbdd`.`user` (
 ENGINE = InnoDB;
 
 INSERT INTO `starbdd`.`user` (firstname, lastname, email, phone, preferences, hashed_password, admin_credentials, backpack_id)
-VALUES ("Jérôme", "Vilanova", "jerome.vilanova@gmail.com", "+33123456787", "Randonnées de haute-montagne et trekking", "$argon2id$v=19$m=65536,t=3,p=1$Fc2fOTj3AF7U9epqu9AXfw$/os0n2Y", 1, 3),("Holberton", "School", "tls-staff@holbertonschool.com", "+33582880603", "Trekking", "$argon2id$v=19$m=65536,t=3,p=1$Fc2fOTj3AF7U9epqu9AXfw$/os0n2Y", 1, 5);
+VALUES ("Jérôme", "Vilanova", "jerome.vilanova@gmail.com", "+33123456787", "Randonnées de haute-montagne et trekking", "$argon2id$v=19$m=65536,t=3,p=1$Fc2fOTj3AF7U9epqu9AXfw$/os0n2Y", 1, 3),("Holberton", "School", "tls-staff@holbertonschool.com", "+33582880603", "Trekking", "$argon2id$v=19$m=65536,t=3,p=1$1QWCPr2LAj1+1DwfUKzIBQ$CoDAETI", 1, 5);
 
 
 -- -----------------------------------------------------

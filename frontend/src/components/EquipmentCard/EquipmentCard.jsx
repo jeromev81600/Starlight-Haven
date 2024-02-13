@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 import "./EquipmentCard.scss";
+import { useState } from "react";
 
 export default function EquipmentCard({ backpackData, equipments }) {
+  const [titleHovered, setTitleHovered] = useState(false);
+  console.info("hover", titleHovered);
+
   return (
     backpackData && (
       <div className="EquipmentCardContainer">
@@ -34,26 +38,32 @@ export default function EquipmentCard({ backpackData, equipments }) {
             </div>
           </div>
         </div>
-        <div className="EquipmentCard">
+        <div className="EquipmentCards">
           {equipments.map((equipment) => (
             <div className="EquipmentCard" key={equipment.id}>
-              <div className="EquipmentCardTitleBox">
+              <div
+                className="EquipmentCardTitleBox"
+                onMouseEnter={() => setTitleHovered(true)}
+                onMouseLeave={() => setTitleHovered(false)}
+              >
                 <h2>{equipment.equipmentname}</h2>
               </div>
-              <div className="EquipmentCardContentBox">
-                <p>
-                  <h3>Type :</h3> {equipment.type}
-                </p>
-                <p>
-                  <h3>Caractéristiques :</h3> {equipment.description}
-                </p>
-                <p>
-                  <h3>Volume :</h3> entre {equipment.volumem} litres
-                </p>
-                <p>
-                  <h3>Poids :</h3> {equipment.weight} Kg
-                </p>
-              </div>
+              {titleHovered && (
+                <div className="EquipmentCardContentBox">
+                  <p>
+                    <h3>Type :</h3> {equipment.type}
+                  </p>
+                  <p>
+                    <h3>Caractéristiques :</h3> {equipment.description}
+                  </p>
+                  <p>
+                    <h3>Volume :</h3> entre {equipment.volumem} litres
+                  </p>
+                  <p>
+                    <h3>Poids :</h3> {equipment.weight} Kg
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>
