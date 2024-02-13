@@ -10,7 +10,7 @@ function Footer() {
         <p>&copy;WCS Projet 2 - 06 Mai 2023</p>
       </div>
       <div className="up">
-        <button role="button" className="scroll-to-top" onClick={scrollToTop}>
+        <button type="button" className="scroll-to-top" onClick={scrollToTop}>
           <i className="pi pi-chevron-up" style={{ fontSize: "2rem" }} />
         </button>
       </div>

@@ -49,7 +49,6 @@ export default function Login() {
       .post(`${import.meta.env.VITE_BACKEND_URL}/users/login`, form)
       .then((res) => {
         const { token } = res.data;
-
         if (token) {
           setToken(token);
 
