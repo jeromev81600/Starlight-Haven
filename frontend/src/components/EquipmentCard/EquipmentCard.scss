@@ -1,12 +1,27 @@
 .EquipmentCardContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 3rem;
   margin: 0 1rem 5rem 1rem;
 
-  .EquipmentCard,
+  .EquipmentCards {
+    width: 100%;
+    gap: 0.75rem;
+    display: flex;
+    flex-direction: column;
+
+    .EquipmentCard {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid lightgrey;
+      border-radius: 10px;
+    }
+  }
+
   .EquipmentBackpackCard {
     width: 100%;
     background-color: black;
@@ -74,10 +89,18 @@
   .EquipmentCardContainer {
     padding: 0 2rem 0 2rem;
     display: flex;
+    flex-direction: row;
     align-items: start;
     flex-wrap: wrap;
     gap: 3rem;
     margin-bottom: 5rem;
+
+    .EquipmentCards {
+      width: calc(50% - 6rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
     .EquipmentCardContentBox,
     .EquipmentBackpackCardContentBox {
@@ -86,9 +109,9 @@
       width: 100%;
       padding: 1rem;
     }
-    .EquipmentCard,
+
     .EquipmentBackpackCard {
-      width: 39rem;
+      width: calc(50% - 6rem);
       min-height: 300px;
       padding: 0;
 
