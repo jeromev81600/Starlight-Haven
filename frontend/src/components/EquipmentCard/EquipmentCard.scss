@@ -19,6 +19,14 @@
       align-items: center;
       border: 1px solid lightgrey;
       border-radius: 10px;
+
+      .CardContent-show {
+        display: flex;
+      }
+
+      .CardContent-hide {
+        display: none;
+      }
     }
   }
 
